@@ -23,7 +23,7 @@ paginate: true
 ---
 
 
-## What's a Compiler
+## What's a Compiler?
 
 - Converts data (typically text) from one form to another
 - Most known from programming languages
