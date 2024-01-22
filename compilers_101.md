@@ -11,8 +11,8 @@ paginate: true
 
 # A Quick Note
 
-- All code examples are taken from my C compiler written in Rust named RustyC
-- Can be found in my GitHub
+- All code examples are taken from RustyC: my C compiler written in Rust
+- Can be found on my GitHub
 - Work in progress
 - ;)
 
@@ -89,6 +89,20 @@ paginate: true
 struct Token {
     kind: TokenKind,
     span: Span,
+}
+```
+
+---
+
+### 1. Lexical Analysis - Code
+
+```rust
+enum TokenKind {
+    Number(NumberToken),
+    BinaryOperator(BinaryOperatorToken),
+    OpenDelimiter(DelimiterToken),
+    CloseDelimiter(DelimiterToken),
+    Eof,
 }
 ```
 
