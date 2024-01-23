@@ -214,7 +214,7 @@ struct Node {
 - The last pass in the compilation process
 - AST iteration: top down
 - Code generation: bottom up
-- Convert complex items to basic machine-code (or assembly) instructions
+- Lowers complex items to basic machine-code (or assembly) instructions
 
 ---
 
@@ -339,7 +339,7 @@ _main:
 ## rustc - The Rust Compiler
 
 - Self-hosted
-- Uses a unique design that allows it to support the unique characteristics of Rust benefits
+- Uses a unique design that allows it to support the unique characteristics of Rust
 - Special in 2 ways (quoted from the rustc dev guide)
     - Does things to your code that other compilers don't do (e.g. borrow checking)
     - Has a lot of unconventional implementation choices (e.g. queries)
