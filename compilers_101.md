@@ -8,7 +8,7 @@ paginate: true
 
 ---
 
-# A Quick Note
+## A Quick Note
 
 - All code examples are taken from RustyC: my C compiler written in Rust
 - Can be found on my GitHub
