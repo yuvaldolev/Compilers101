@@ -456,7 +456,6 @@ _main:
 
 ### Type Inference
 
-- The HIR is used to perform Type Inference 
 - The process of automatic detection of the type of an expression
 
 ---
@@ -606,12 +605,23 @@ crate: rustc_codegen_llvm
 
 ### Queries
 
-- rustc uses a query system which is unlike most textbook compilers
-- Compilers are usually which are organized as a series of passes execute sequentially
-- rustc does this to make incremental compilation possible
+- Compilers are usually organized as a series of passes that execute sequentially
+
+---
+
+### Queries
+
 - All the major steps in rustc are organized as a bunch of queries that call each other
+- These queries can call each other and are all tracked through the query system
 - The results of the queries are cached on disk
-- This is how incremental compilation works
+
+---
+
+### Queries
+
+- rustc checks which queries' results changed from the last compilation
+- Then only performs those
+- rustc does this to make incremental compilation possible
 
 ---
 
@@ -631,14 +641,14 @@ crate: rustc_codegen_llvm
 
 - Types are really important in Rust
 - They form the core of a lot of compiler analyses
-- The main type (in the compiler) that represents types (in the user's program) ty::Ty
+- ty::Ty - the main type (in the compiler) that represents types (in the user's program)
 - rustc uses this to perform all type-related operations during compilation!
 
 ---
 
 ### Parallelism
 
-- Compiler performance is a problem that worked on by the rustc team
+- Compiler performance is a problem that is worked on by the rustc team
 - One aspect of that is parallelizing rustc itself
 - Currently, there is only one part of rustc that is parallel by default: codegen
 - There are lots of efforts to parallelize the rest of rustc
